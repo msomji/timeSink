@@ -14,7 +14,7 @@
     "scripts": ["backgroundScript.js"]
   },
   "content_scripts": [ {
-    "matches": ["https://www.google.com/*"],
+    "matches": ["http://localhost:3000/*"],
     "js": ["contentScript.js"]
   }]
 }
