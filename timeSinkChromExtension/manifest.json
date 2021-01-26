@@ -1,0 +1,20 @@
+{
+  "manifest_version": 2,
+  "version": "0.1",
+  "name": "Time Sink",
+  "description": "Visualize your chrome activity to determine your surfing habits.",
+  "permissions": [
+    "history",
+    "tabs"
+  ],
+  "browser_action": {
+    "default_icon": "timeSink.png"
+  },
+  "background": {
+    "scripts": ["backgroundScript.js"]
+  },
+  "content_scripts": [ {
+    "matches": ["https://www.google.com/*"],
+    "js": ["contentScript.js"]
+  }]
+}
