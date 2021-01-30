@@ -1,0 +1,17 @@
+@import "variables.scss";
+
+.interval {
+  margin: 0 1.5em;
+  ul, li {
+    display: inline;
+    div {
+      display: inline;
+      padding-bottom: .3em;
+      margin: 1.5em;
+    }
+  }
+}
+.active {
+  color: $highlight;
+  border-bottom: .2em solid $highlight;
+}

@@ -4,7 +4,7 @@ import * as d3 from 'd3';
 import { useAppContext } from '../context/state';
 
 
-export default function Home() {
+export default function SitesVisited() {
   const globalContext = useAppContext()
   const svgRef = useRef(null)
   const dataset = [100, 200, 300, 400, 500];

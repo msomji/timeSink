@@ -1,6 +1,6 @@
-import styles from '../../styles/sideBar.module.scss'
+import styles from '../styles/sideBar.module.scss'
 import { useRouter } from 'next/router'
-import NavButton from '../navButton/NavButton'
+import NavButton from '../components/NavButton'
 import { faChartLine, faLink, faSearch, faTh } from '@fortawesome/free-solid-svg-icons'
 
 

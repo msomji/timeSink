@@ -4,8 +4,7 @@ let awaitDataCollection = async () => {
     console.log('waiting')
     await new Promise(resolve => setTimeout(resolve, 1000));
   }
-  console.log('recieved visitHistory.');
-  console.log(visitHistory)
+  // console.log('recieved visitHistory.');
+  // console.log(visitHistory)
 }
-console.log('wer')
 awaitDataCollection()

@@ -1,0 +1,31 @@
+@import "variables.scss";
+
+.head {
+  display: flex;
+  justify-content: flex-end;
+  color: $primary;
+  a {
+    margin: auto 1.5em;
+    div {
+      display: flex;
+      flex-direction: row;
+      background-color: $info;
+      border-radius: 15px;
+      padding: 5px 10px;
+    }
+    p {
+      margin: auto;
+      padding-left: 10px;
+    }
+    &:hover {
+      div {
+        background-color: $link;
+        border: 2px solid $info;
+        color: $info;
+        border-radius: 15px;
+        padding: 5px 10px;
+      }
+
+    }
+  }
+}

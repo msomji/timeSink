@@ -1,6 +1,4 @@
-import styles from '../../styles/logo.module.scss'
-
-
+import styles from '../styles/logo.module.scss'
 import Image from 'next/image'
 
 

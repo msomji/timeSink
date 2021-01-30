@@ -1,15 +1,17 @@
 import '../styles/globals.scss'
 import { AppWrapper } from '../context/state'
-import SideBar from '../components/sideBar/SideBar'
-import Logo from '../components/logo/Logo'
+import SideBar from '../components/SideBar'
+import Logo from '../components/Logo'
+import Header from '../components/Header'
 
 
 export default function MyApp({ Component, pageProps }) {
   console.log('pageProps', pageProps)
   return (
     <AppWrapper>
-      <Logo/>
-    <div id="head">this is the head</div>
+      <Logo />
+      <Header />
+      
       <SideBar />
       <Component {...pageProps} />
       <div id="block" className="has-background-link"></div>
