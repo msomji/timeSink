@@ -1,0 +1,30 @@
+@import "variables.scss";
+
+.content {
+  display: flex;
+  flex-direction: column;
+  padding: 1.5em 1.5em 1.5em .8em;
+  border-top: .1em solid $info;
+  text-align: center;
+  height: 120px;
+  
+  svg {
+    margin: auto;
+    color: $highlight;
+  }
+  
+  span {
+    margin: auto;
+  }
+  
+  &.activeContent, &:hover {
+    background-color: $primary;
+    border-left: .3em solid $highlight;
+    padding-left: 0.5em;
+  }
+  
+  &.lastButton {
+    border-bottom: .1em solid $info;
+    
+  }
+}

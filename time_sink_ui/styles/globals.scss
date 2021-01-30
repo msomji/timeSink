@@ -1,0 +1,51 @@
+@import "./variables.scss";
+@import "bulma/bulma";
+
+html,
+body {
+  font-size: 16px;
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans,
+    Helvetica Neue, sans-serif;
+}
+body > div {
+  display: grid;
+  width: 100%;
+  min-height: 100vh;
+  grid-template-areas:
+    "logo head"
+    "nav main"
+    "block footer";
+  grid-template-rows: 100px 1fr 50px;
+  grid-template-columns:  minmax(200px, 1fr) 9fr;
+}
+#head {
+  grid-area: head;
+  background-color: $primary;
+}
+#logo {
+  background-color: $link;
+  grid-area: logo;
+}
+aside {
+  grid-area: nav;
+}
+#main {
+  background-color: $primary;
+  grid-area: main;
+}
+#block {
+  grid-area: block;
+}
+footer {
+  grid-area: footer;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}

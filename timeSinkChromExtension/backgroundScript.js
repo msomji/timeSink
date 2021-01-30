@@ -1,4 +1,4 @@
-const APP_URL = "http://stackoverflow.com/"
+const APP_URL = "https://time-sink.vercel.app/"
 
 chrome.browserAction.onClicked.addListener(() => chrome.tabs.create({ url: APP_URL }));
 
