@@ -16,17 +16,11 @@ function CurrentInterval({ text, onClick, isActive }) {
 
 
 
-export default function Interval() {
-  const [currentInterval, setCurrentInterval] = useState(TODAY)
+export default function Interval({intervals, currentInterval, updateInterval}) {
   return (
     <div className={styles.interval}>
       <ul>
-        <li><CurrentInterval text={TODAY} onClick={() => setCurrentInterval(TODAY)} isActive={currentInterval === TODAY} /></li>
-        <li><CurrentInterval text={WEEK} onClick={() => setCurrentInterval(WEEK)} isActive={currentInterval === WEEK} /></li>
-        <li><CurrentInterval text={MONTH} onClick={() => setCurrentInterval(MONTH)} isActive={currentInterval === MONTH} /></li>
-        <li><CurrentInterval text={YEAR} onClick={() => setCurrentInterval(YEAR)} isActive={currentInterval === YEAR} /></li>
-        <li><CurrentInterval text={ALL_TIME} onClick={() => setCurrentInterval(ALL_TIME)} isActive={currentInterval === ALL_TIME} /></li>
-
+        {intervals.map(interval => <li><CurrentInterval text={interval} onClick={() => updateInterval(interval)} isActive={currentInterval === interval} /></li>)}
       </ul>
     </div>
   )

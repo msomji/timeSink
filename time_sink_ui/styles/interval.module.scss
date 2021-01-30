@@ -2,12 +2,15 @@
 
 .interval {
   margin: 0 1.5em;
+  
   ul, li {
-    display: inline;
+    display: inline-block;
+    padding: .5em;
     div {
       display: inline;
       padding-bottom: .3em;
       margin: 1.5em;
+      white-space: nowrap;
     }
   }
 }
