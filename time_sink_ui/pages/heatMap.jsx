@@ -1,8 +1,9 @@
-import { Fragment, useEffect } from 'react'
+import { useEffect } from 'react'
 
 import { useAppContext } from '../context/state';
 import { heatMapChart } from '../chartFunctions/sampleChart';
 import Chart from '../components/Chart';
+import Loading from '../components/Loading';
 
 
 export default function HeatMap() {
@@ -11,9 +12,7 @@ export default function HeatMap() {
   }, [])
 
   if (globalContext.isLoading) {
-    return (<Fragment>
-      <div>globalContext is loading...</div>
-    </Fragment>)
+    return (<Loading />)
   } else {
     return (
       <div className="has-background-primary">

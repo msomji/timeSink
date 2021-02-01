@@ -1,7 +1,8 @@
-import { Fragment, useState } from 'react'
+import { useState } from 'react'
 import { forceBubleChart, drawChart } from '../chartFunctions/sampleChart';
 import FlashCard from '../components/FlashCard'
 import Interval, { INTERVALS, TODAY } from '../components/Interval'
+import Loading from '../components/Loading';
 import SnapShot from '../components/SnapShot'
 import { useAppContext } from '../context/state';
 
@@ -12,9 +13,7 @@ export default function Index() {
   const globalContext = useAppContext()
 
   if (globalContext.isLoading) {
-    return (<Fragment>
-      <div>globalContext is loading...</div>
-    </Fragment>)
+    return (<Loading/>)
   }
 
   return (<div id="main" className={`${styles.main}`}>
