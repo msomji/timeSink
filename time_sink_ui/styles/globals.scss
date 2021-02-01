@@ -16,7 +16,7 @@ body > div {
   grid-template-areas:
     "logo head"
     "nav main"
-    "block footer";
+    "footer footer";
   grid-template-rows: 100px 1fr 50px;
   grid-template-columns:  minmax(200px, 1fr) 9fr;
 }

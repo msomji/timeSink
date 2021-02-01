@@ -1,32 +1,45 @@
 import { Fragment, useState } from 'react'
+import { forceBubleChart, drawChart } from '../chartFunctions/sampleChart';
 import FlashCard from '../components/FlashCard'
-import Interval from '../components/Interval'
+import Interval, { INTERVALS, TODAY } from '../components/Interval'
 import SnapShot from '../components/SnapShot'
+import { useAppContext } from '../context/state';
 
 import styles from '../styles/index.module.scss'
-const TODAY = 'Today'
-const WEEK = 'Week'
-const MONTH = 'Month'
-const YEAR = 'Year'
-const ALL_TIME = 'All Time'
 
-const INTERVALS = [TODAY, WEEK, MONTH, YEAR, ALL_TIME]
 export default function Index() {
   const [currentInterval, setCurrentInterval] = useState(TODAY)
-  return (<div id="main" className={` ${styles.main}`}>
-    <Interval intervals={INTERVALS} currentInterval={currentInterval} updateInterval={setCurrentInterval} />
+  const globalContext = useAppContext()
 
-    <div className="flashard-container">
-      <div className="group">
-        <FlashCard />
-        <FlashCard />
-      </div>
-      <div className="group">
-        <FlashCard />
-        <FlashCard />
-      </div>
-    <SnapShot/>
+  if (globalContext.isLoading) {
+    return (<Fragment>
+      <div>globalContext is loading...</div>
+    </Fragment>)
+  }
 
+  return (<div id="main" className={`${styles.main}`}>
+
+      <Interval intervals={INTERVALS} currentInterval={currentInterval} updateInterval={setCurrentInterval} />
+
+      <div className={`${styles.container}`}>
+        <div className="group">
+          <FlashCard />
+          <FlashCard />
+        </div>
+        <div className="group">
+          <FlashCard />
+          <FlashCard />
+        </div>
+      </div>
+      <div className={`${styles.container}`}>
+        <div className="group">
+          <SnapShot currentInterval={currentInterval} drawChart={forceBubleChart} linkTo="/sitesVisited" value="Sites Visited" />
+          <SnapShot currentInterval={currentInterval} drawChart={drawChart} linkTo="/" value="Avtivity Heat Map" />
+        </div>
+        <div className="group">
+          <SnapShot currentInterval={currentInterval} drawChart={drawChart} linkTo="/" value="This is values" />
+          <SnapShot currentInterval={currentInterval} drawChart={drawChart} linkTo="/" value="This is values" />
+        </div>
     </div>
   </div>)
 

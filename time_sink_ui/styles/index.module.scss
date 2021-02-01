@@ -1,7 +1,11 @@
 @import "variables.scss";
 
 .main {
-  div {
+}
+
+.container {
+  display: inline-block;
+  & > div {
     display: inline-block;
   }
 }

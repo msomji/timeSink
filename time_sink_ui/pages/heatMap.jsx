@@ -1,11 +1,11 @@
-import { Fragment, useEffect, } from 'react'
+import { Fragment, useEffect } from 'react'
 
 import { useAppContext } from '../context/state';
-import { forceBubleChart } from '../chartFunctions/sampleChart';
+import { heatMapChart } from '../chartFunctions/sampleChart';
 import Chart from '../components/Chart';
 
 
-export default function SitesVisited() {
+export default function HeatMap() {
   const globalContext = useAppContext()
   useEffect(() => {
   }, [])
@@ -17,7 +17,7 @@ export default function SitesVisited() {
   } else {
     return (
       <div className="has-background-primary">
-        <Chart drawChart={forceBubleChart} />
+        <Chart drawChart={heatMapChart} />
       </div>
     )
   }
