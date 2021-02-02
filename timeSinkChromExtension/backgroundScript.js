@@ -14,11 +14,11 @@ chrome.runtime.onMessage.addListener(function (request, _sender, sendResponse) {
         chrome.history.getVisits({ url: historyItem.url }, visits => {
           visits.forEach(visit => {
             visitHistory.push({
+              historyId: parseInt(historyItem.id),
               url: historyItem.url,
               title: historyItem.title,
-              historyId: parseInt(historyItem.id),
-              lastVisitTime: historyItem.lastVisitTime,
               typedCount: historyItem.typedCount,
+              lastVisitTime: historyItem.lastVisitTime,
               visitCount: historyItem.visitCount,
               // id: visit.id,
               visitId: parseInt(visit.visitId),
@@ -38,7 +38,14 @@ chrome.runtime.onMessage.addListener(function (request, _sender, sendResponse) {
         await new Promise(resolve => setTimeout(resolve, 500));
       }
       console.log('data collection done.');
-      sendResponse({ visitHistory })
+            
+      //unique by historyId to filter out duplicates
+      let uniqueHistory = [...visitHistory.reduce((acc, visit) => {
+        acc.set(visit.visitTime, visit)
+        return acc;
+      }, new Map()).values()]
+
+      sendResponse({ visitHistory: uniqueHistory })
     }
     awaitDataCollection()
   }

@@ -1,7 +1,7 @@
 import * as d3 from 'd3';
 const urlRegex = /^(?:https?:\/\/)?(?:[^@\/\n]+@)?(?:www\.)?([^:\/?\n]+)/
 
-const getDomain = (url) => {
+export const getDomain = (url) => {
   return url.match(urlRegex)[0]
 }
 export const clearRef = ref => d3.select(ref.current).html("")

@@ -3,7 +3,7 @@ import Link from 'next/link'
 import { useRef, useEffect } from 'react'
 import { useAppContext } from '../context/state'
 import { clearRef } from '../chartFunctions/sampleChart'
-import { filterToHours } from './Interval'
+import { filterDataByCurrentInterval } from './Interval'
 
 
 
@@ -13,8 +13,7 @@ export default function SnapShot({currentInterval, value, drawChart, linkTo }) {
   useEffect(() => {
     if (!isLoading) {
       clearRef(ref)
-      let filterdData = chromeHistoryData.filter(d =>
-         (new Date().getTime() - new Date(d.lastVisitTime).getTime()) / (1000 * 3600) < filterToHours(currentInterval))
+      let filterdData = chromeHistoryData.filter(filterDataByCurrentInterval(currentInterval))
       drawChart(filterdData)(ref)
     }
 

@@ -1,15 +1,20 @@
 @import "variables.scss";
 
 .card {
+  // margin: auto;
+  flex-direction: column;
+  justify-content: center;
   margin: 40px;
   border-radius: 0.6em;
   border: .1em solid $highlight;
-  display: inline-block;
+  display: flex;
   padding: 1.5em;
   text-align: center;
 
-  min-width: 10em;
-  max-width: 15em;
+  width: 15em;
+
+  height: 11em;
+  max-height: 11em;
 
   word-wrap:break-word;
   h3 {

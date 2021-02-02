@@ -6,6 +6,6 @@
 .container {
   display: inline-block;
   & > div {
-    display: inline-block;
+    display: inline-flex;
   }
 }
