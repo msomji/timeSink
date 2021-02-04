@@ -1,5 +1,4 @@
 import styles from '../styles/snapShot.module.scss'
-import Link from 'next/link'
 import { useRef, useEffect } from 'react'
 import { useAppContext } from '../context/state'
 import { clearRef } from '../chartFunctions/sampleChart'
