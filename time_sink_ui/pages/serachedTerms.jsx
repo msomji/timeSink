@@ -6,7 +6,7 @@ import Chart from '../components/Chart';
 import Loading from '../components/Loading';
 
 
-export default function HeatMap() {
+export default function serachedTerms() {
   const globalContext = useAppContext()
   useEffect(() => {
   }, [])

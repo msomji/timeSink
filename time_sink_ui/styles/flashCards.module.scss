@@ -1,23 +1,17 @@
 @import "variables.scss";
 
 .card {
-  // margin: auto;
+  display: flex;
   flex-direction: column;
   justify-content: center;
-  margin: 40px;
+  margin: .5em 2.5em;
   border-radius: 0.6em;
-  border: .1em solid $highlight;
-  display: flex;
-  padding: 1.5em;
+  padding: .5em;
   text-align: center;
 
   width: 15em;
-
-  height: 11em;
-  max-height: 11em;
-
   word-wrap:break-word;
   h3 {
-    padding-top: 1em;
+    padding: 0.5em;
   }
 }

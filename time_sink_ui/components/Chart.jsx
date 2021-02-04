@@ -1,14 +1,14 @@
 import styles from '../styles/chart.module.scss'
 import Link from 'next/link'
 import { useRef, useEffect, useState, Fragment } from 'react'
-import Interval, { filterToHours, INTERVALS, TODAY } from './Interval'
+import Interval, { filterToHours, INTERVALS, MONTH, TODAY } from './Interval'
 import { useAppContext } from '../context/state'
 import { clearRef } from '../chartFunctions/sampleChart'
 
 
 
 export default function Chart({ value, drawChart }) {
-  const [currentInterval, setCurrentInterval] = useState(TODAY)
+  const [currentInterval, setCurrentInterval] = useState(MONTH)
   const { isLoading, chromeHistoryData } = useAppContext()
 
   const ref = useRef(null)

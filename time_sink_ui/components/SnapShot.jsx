@@ -7,7 +7,7 @@ import { filterDataByCurrentInterval } from './Interval'
 
 
 
-export default function SnapShot({currentInterval, value, drawChart, linkTo }) {
+export default function SnapShot({ currentInterval, value, drawChart, linkTo }) {
   const ref = useRef(null)
   const { isLoading, chromeHistoryData } = useAppContext()
   useEffect(() => {
@@ -19,14 +19,10 @@ export default function SnapShot({currentInterval, value, drawChart, linkTo }) {
 
   }, [isLoading, chromeHistoryData, currentInterval])
   return (
-    <Link href={linkTo}>
-      <a>
-        <div className={styles.snapShot}>
-          <svg ref={ref} className={styles.container}>
-          </svg>
-          <h4 className={`has-text-weight-bold is-size-4 has-text-info`}>{value}</h4>
-        </div>
-      </a>
-    </Link>
+    <div className={styles.snapShot}>
+      <h4 className={`has-text-weight-bold is-size-3 has-text-grey-light`}>{value}</h4>
+      <svg ref={ref} className={styles.container}>
+      </svg>
+    </div>
   )
 }

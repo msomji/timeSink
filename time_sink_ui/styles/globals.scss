@@ -17,8 +17,8 @@ body > div {
     "logo head"
     "nav main"
     "footer footer";
-  grid-template-rows: 100px auto auto;
-  grid-template-columns:  minmax(200px, 1fr) 9fr;
+  grid-template-rows: 100px auto 80px;
+  grid-template-columns:  minmax(180px, 1fr) 9fr;
 }
 #head {
   grid-area: head;

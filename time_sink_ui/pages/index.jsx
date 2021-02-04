@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { forceBubleChart, drawChart } from '../chartFunctions/sampleChart';
 import FlashCard from '../components/FlashCard'
-import Interval, { INTERVALS, TODAY } from '../components/Interval'
+import Interval, { INTERVALS, LAST_60_DAYS, MONTH, TODAY } from '../components/Interval'
 import Loading from '../components/Loading';
 import SnapShot from '../components/SnapShot'
 import { useAppContext } from '../context/state';
@@ -9,8 +9,6 @@ import { filterDataByCurrentInterval } from '../components/Interval'
 import { getDomain } from '../chartFunctions/sampleChart'
 
 import styles from '../styles/index.module.scss'
-
-
 
 const SOCIAL_MEDIA_SITES = ['twitter.com',
   'facebook.com',
@@ -78,7 +76,7 @@ const mostPopularDomain = data => {
 
 
 export default function Index() {
-  const [currentInterval, setCurrentInterval] = useState(TODAY)
+  const [currentInterval, setCurrentInterval] = useState(MONTH)
   const [filteredData, setFilteredData] = useState([])
   const { isLoading, chromeHistoryData } = useAppContext()
 
@@ -96,25 +94,12 @@ export default function Index() {
     <Interval intervals={INTERVALS} currentInterval={currentInterval} updateInterval={setCurrentInterval} />
 
     <div className={`${styles.container}`}>
-      <div className="group">
         <FlashCard value={totalNumnberOfSitesVisited(filteredData)} description="Websites visited" />
         <FlashCard value={totalSocialMediaVisits(filteredData)} description="Social Media visits" />
-      </div>
-      <div className="group">
         <FlashCard value={mostActiveDay(filteredData)} description="Most Active Day" />
         <FlashCard value={mostPopularDomain(filteredData)} description="Most Popular Domain" />
-      </div>
-    </div>
-    <div className={`${styles.container}`}>
-      <div className="group">
-        <SnapShot currentInterval={currentInterval} drawChart={forceBubleChart} linkTo="/sitesVisited" value="Sites Visited" />
-        <SnapShot currentInterval={currentInterval} drawChart={drawChart} linkTo="/" value="Avtivity Heat Map" />
-      </div>
-      <div className="group">
-        <SnapShot currentInterval={currentInterval} drawChart={drawChart} linkTo="/" value="Frequently Searched Terms" />
-        <SnapShot currentInterval={currentInterval} drawChart={drawChart} linkTo="/" value="This is values" />
-      </div>
-    </div>
+    </div>    
+    <SnapShot currentInterval={currentInterval} drawChart={forceBubleChart} value="Sites Visited" />
   </div>)
 
 }

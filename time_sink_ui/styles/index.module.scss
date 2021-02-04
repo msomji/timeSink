@@ -1,11 +1,12 @@
 @import "variables.scss";
 
-.main {
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
 }
 
-.container {
-  display: inline-block;
-  & > div {
-    display: inline-flex;
-  }
+.group {
+  display: flex;
+  flex-wrap: wrap;
 }
