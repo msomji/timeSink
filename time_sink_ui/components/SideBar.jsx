@@ -12,8 +12,8 @@ export default function SideBar() {
       <ul>
         <li><NavButton icon={faChartLine} active={router.asPath == '/'} content="Dashboard" linkTo="/" /></li>
         <li><NavButton icon={faLink} active={router.asPath == '/sitesVisited'} content="SitesVisited" linkTo="/sitesVisited" /></li>
-        <li><NavButton icon={faTh} active={router.asPath == '/heatMap'} content="Activity Heat Map" linkTo="/heatMap" /></li>
-        <li><NavButton icon={faSearch} active={router.asPath == '/serachedTerms'} content="Frequently Searched Terms" linkTo="/serachedTerms" isLast={true} /></li>
+        <li><NavButton icon={faSearch} active={router.asPath == '/searchedTerms'} content="Frequently Searched Terms" linkTo="/searchedTerms" /></li>
+        <li><NavButton icon={faTh} active={router.asPath == '/heatMap'} content="Activity Heat Map" linkTo="/heatMap"  isLast={true} /></li>
       </ul>
     </aside>
   )

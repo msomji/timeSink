@@ -1,4 +1,4 @@
-import { getDomain } from "./sampleChart"
+import { getDomain } from "./d3Charts"
 
 export const SOCIAL_MEDIA_SITES = ['twitter.com',
   'facebook.com',

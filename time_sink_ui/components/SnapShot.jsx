@@ -1,7 +1,7 @@
 import styles from '../styles/snapShot.module.scss'
 import { useRef, useEffect } from 'react'
 import { useAppContext } from '../context/state'
-import { clearRef } from '../chartFunctions/sampleChart'
+import { clearRef } from '../chartFunctions/d3Charts'
 import { filterDataByCurrentInterval } from './Interval'
 
 

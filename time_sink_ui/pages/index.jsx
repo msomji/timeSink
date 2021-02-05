@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { forceBubleChart } from '../chartFunctions/sampleChart';
+import { forceBubleChart } from '../chartFunctions/d3Charts';
 import FlashCard from '../components/FlashCard'
 import Interval, { INTERVALS, MONTH } from '../components/Interval'
 import Loading from '../components/Loading';

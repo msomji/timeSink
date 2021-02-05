@@ -1,12 +1,12 @@
 import { useEffect } from 'react'
 
 import { useAppContext } from '../context/state';
-import { heatMapChart, wordCloudChart } from '../chartFunctions/sampleChart';
+import { heatMapChart, wordCloudChart } from '../chartFunctions/d3Charts';
 import Chart from '../components/Chart';
 import Loading from '../components/Loading';
 
 
-export default function serachedTerms() {
+export default function searchedTerms() {
   const globalContext = useAppContext()
   useEffect(() => {
   }, [])
