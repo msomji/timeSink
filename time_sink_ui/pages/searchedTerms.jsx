@@ -1,7 +1,7 @@
 import { useEffect } from 'react'
 
 import { useAppContext } from '../context/state';
-import { heatMapChart, wordCloudChart } from '../chartFunctions/d3Charts';
+import { wordCloudChart } from '../chartFunctions/d3Charts';
 import Chart from '../components/Chart';
 import Loading from '../components/Loading';
 

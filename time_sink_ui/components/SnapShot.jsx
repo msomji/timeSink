@@ -2,9 +2,7 @@ import styles from '../styles/snapShot.module.scss'
 import { useRef, useEffect } from 'react'
 import { useAppContext } from '../context/state'
 import { clearRef } from '../chartFunctions/d3Charts'
-import { filterDataByCurrentInterval } from './Interval'
-
-
+import { filterDateByinterval } from '../utils/utils'
 
 export default function SnapShot({ currentInterval, value, drawChart, linkTo }) {
   const ref = useRef(null)
@@ -12,7 +10,8 @@ export default function SnapShot({ currentInterval, value, drawChart, linkTo }) 
   useEffect(() => {
     if (!isLoading) {
       clearRef(ref)
-      let filterdData = chromeHistoryData.filter(filterDataByCurrentInterval(currentInterval))
+      
+      let filterdData = filterDateByinterval(chromeHistoryData, currentInterval)
       drawChart(filterdData)(ref)
     }
 

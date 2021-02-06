@@ -1,7 +1,6 @@
 import styles from '../styles/logo.module.scss'
 import Image from 'next/image'
 
-
 export default function Logo() {
   return (<div className={`${styles.logo} logo has-background-primary`}>
     <div><Image src='/timeSink.png' width="60px" height="60px" /></div>

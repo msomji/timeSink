@@ -12,7 +12,7 @@ export default function SitesVisited() {
   }, [])
 
   if (globalContext.isLoading) {
-    return (<Loading/>)
+    return (<Loading />)
   } else {
     return (
       <div className="has-background-primary">

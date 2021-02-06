@@ -5,7 +5,6 @@ import { heatMapChart, wordCloudChart } from '../chartFunctions/d3Charts';
 import Chart from '../components/Chart';
 import Loading from '../components/Loading';
 
-
 export default function HeatMap() {
   const globalContext = useAppContext()
   useEffect(() => {
